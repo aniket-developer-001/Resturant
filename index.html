@@ -1,0 +1,2252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golden Harvest | Premium Restaurant</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#fff;
+    color:#333;
+    scroll-behavior:smooth;
+}
+
+/* ================= HEADER ================= */
+header{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,0.8);
+    backdrop-filter:blur(10px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 6%;
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    color:#FFD700;
+    font-size:22px;
+    font-weight:700;
+}
+
+.logo i{
+    margin-right:10px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#fff;
+    font-weight:500;
+    transition:0.3s;
+    position:relative;
+}
+
+nav ul li a::after{
+    content:"";
+    position:absolute;
+    width:0%;
+    height:2px;
+    left:0;
+    bottom:-5px;
+    background:#FFD700;
+    transition:0.4s;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
+.menu-toggle{
+    display:none;
+    font-size:25px;
+    color:#fff;
+}
+
+/* ================= HERO SECTION ================= */
+.hero{
+    height:100vh;
+    background:url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') no-repeat center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+    position:relative;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:700px;
+    animation:fadeIn 2s ease;
+}
+
+.hero h1{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+.hero button{
+    padding:12px 30px;
+    border:none;
+    background:#FFD700;
+    color:#000;
+    font-weight:600;
+    border-radius:30px;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+.hero button:hover{
+    background:#fff;
+    transform:scale(1.05);
+}
+
+/* ================= SECTION ================= */
+section{
+    padding:100px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:36px;
+    color:#333;
+}
+
+/* ================= PROFESSIONAL PRODUCTS ================= */
+
+.products-section {
+    background: #f9f9f9;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-img img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.card:hover .card-img img {
+    transform: scale(1.1);
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+/* Cart Button */
+.cart-btn {
+    padding: 10px 18px;
+    border: none;
+    background: #FFD700;
+    color: #000;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.cart-btn:hover {
+    background: #fff;
+}
+
+/* Content */
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    margin-bottom: 8px;
+}
+
+.stars {
+    color: #FFD700;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.price {
+    font-weight: 700;
+    font-size: 18px;
+    color: #000;
+}
+
+/* ================= ABOUT ================= */
+.about{
+    display:flex;
+    flex-wrap:wrap;
+    gap:40px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    max-width:450px;
+    border-radius:15px;
+}
+
+.about-text{
+    flex:1;
+}
+
+/* ================= REVIEWS ================= */
+.reviews{
+    background:#f9f9f9;
+}
+
+.review-box{
+    background:#fff;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom:20px;
+}
+
+/* ================= CONTACT ================= */
+.contact form{
+    max-width:600px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+}
+
+.contact input, .contact textarea{
+    margin-bottom:15px;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.contact button{
+    padding:12px;
+    border:none;
+    background:#FFD700;
+    font-weight:600;
+    cursor:pointer;
+    border-radius:8px;
+}
+
+/* ================= FOOTER ================= */
+footer{
+    background:#111;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+    nav ul{
+        position:absolute;
+        top:70px;
+        right:-100%;
+        background:#000;
+        flex-direction:column;
+        width:250px;
+        padding:20px;
+        transition:0.4s;
+    }
+
+    nav ul.active{
+        right:0;
+    }
+
+    nav ul li{
+        margin:15px 0;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .hero .h1{
+        font-size:35px;
+    }
+}.hero .h1{
+    font-size:55px;
+    margin-bottom:20px;
+    font-weight:700;
+    background:linear-gradient(45deg,#FFD700,#FFA500,#fff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    text-shadow:0 0 15px rgba(255,215,0,0.6),
+                0 0 30px rgba(255,165,0,0.4);
+    animation:shine 5s infinite alternate;
+}@keyframes shine{
+    from{
+        text-shadow:0 0 0px rgba(255,215,0,0.6),
+                    0 0 0px rgba(255,165,0,0.4);
+    }
+    to{
+        text-shadow:0 0 10px rgba(255,215,0,1),
+                    0 0 15px rgba(255,165,0,0.8);
+    }
+}
+/* ================= PREMIUM FOOTER ================= */
+
+.footer {
+    background: linear-gradient(135deg, #111, #1c1c1c);
+    color: #fff;
+    padding: 70px 8% 20px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+}
+
+.footer-box h3 {
+    color: #FFD700;
+    margin-bottom: 15px;
+}
+
+.footer-box h4 {
+    margin-bottom: 15px;
+    color: #FFD700;
+}
+
+.footer-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    color: #ccc;
+}
+
+.footer-box ul {
+    list-style: none;
+}
+
+.footer-box ul li {
+    margin-bottom: 10px;
+}
+
+.footer-box ul li a {
+    text-decoration: none;
+    color: #ccc;
+    transition: 0.3s;
+}
+
+.footer-box ul li a:hover {
+    color: #FFD700;
+    padding-left: 5px;
+}
+
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    background: #222;
+    color: #FFD700;
+    margin-right: 10px;
+    transition: 0.4s;
+}
+
+.social-icons a:hover {
+    background: #FFD700;
+    color: #000;
+    transform: translateY(-5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid #333;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* Responsive */
+@media(max-width:768px) {
+    .footer {
+        text-align: center;
+    }
+    
+    .social-icons a {
+        margin: 5px;
+    }
+}.send-btn {
+    padding: 12px;
+    border: none;
+    background: #FFD700;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: 0.4s;
+}
+
+.send-btn i {
+    transition: 0.4s;
+}
+
+.send-btn:hover {
+    background: #000;
+    color: #FFD700;
+}
+
+.send-btn:hover i {
+    transform: translateX(5px);
+}/* ================= CATALOG SECTION ================= */
+
+.catalog{
+    background:#f9f9f9;
+}
+
+.catalog-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.catalog-box{
+    background:#fff;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    transition:0.4s;
+}
+
+.catalog-box:hover{
+    transform:translateY(-8px);
+}
+
+.catalog-box h3{
+    margin-bottom:20px;
+    color:#FFD700;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.menu-item{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:12px;
+    padding-bottom:8px;
+    border-bottom:1px dashed #ddd;
+    font-size:14px;
+}
+
+.menu-item span:last-child{
+    font-weight:600;
+    color:#000;
+}/* ================= PREMIUM CONTACT SECTION ================= */
+
+.contact {
+    background: linear-gradient(135deg, #fff, #f4f4f4);
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 0px;
+    align-items: center;
+}
+
+.info-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    color: #444;
+}
+
+.info-box i {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFD700;
+    color: #000;
+    border-radius: 50%;
+    font-size: 16px;
+}
+
+/* FORM DESIGN */
+
+.contact-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 0px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    background: transparent;
+}
+
+.input-group label {
+    position: absolute;
+    left: 15px;
+    top: 14px;
+    font-size: 14px;
+    color: #777;
+    pointer-events: none;
+    transition: 0.3s;
+    background: #fff;
+    padding: 0 5px;
+}
+
+.input-group input:focus+label,
+.input-group input:valid+label,
+.input-group textarea:focus+label,
+.input-group textarea:valid+label {
+    top: -10px;
+    font-size: 12px;
+    color: #FFD700;
+}
+
+/* SEND BUTTON */
+
+.send-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background: #FFD700;
+    color: #000;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: 0.4s;
+    font-size: 15px;
+}
+
+.send-btn i {
+    transition: 0.4s;
+}
+
+.send-btn:hover {
+    background: #000;
+    color: #FFD700;
+}
+
+.send-btn:hover i {
+    transform: translateX(6px);
+}
+
+/* Responsive */
+
+@media(max-width:768px) {
+    .contact {
+        text-align: center;
+    }
+}/* ================= PREMIUM REVIEWS SECTION ================= */
+
+.reviews {
+    background: linear-gradient(135deg, #f9f9f9, #ffffff);
+}
+
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.review-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: 0.4s;
+    position: relative;
+}
+
+.review-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.review-header img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #FFD700;
+}
+
+.review-header h4 {
+    margin-bottom: 5px;
+}
+
+.stars {
+    color: #FFD700;
+    font-size: 14px;
+}
+
+.review-card p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Responsive */
+
+@media(max-width:768px) {
+    .reviews {
+        text-align: center;
+    }
+    
+    .review-header {
+        flex-direction: column;
+    }
+}/* ================= SPLIT CONTACT LAYOUT ================= */
+
+.contact-wrapper{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:stretch;
+}
+
+/* LEFT IMAGE */
+.contact-left{
+    height:100%;
+}
+
+.contact-left img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:20px;
+}
+
+/* RIGHT SIDE */
+.contact-right{
+    background:#fff;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+/* Contact Info */
+.contact-info{
+    margin-bottom:25px;
+}
+
+.contact-info h3{
+    margin-bottom:20px;
+    color:#FFD700;
+}
+
+.info-box{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:15px;
+    font-size:14px;
+}
+
+.info-box i{
+    width:35px;
+    height:35px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#FFD700;
+    color:#000;
+    border-radius:50%;
+}
+
+/* FORM */
+.contact-form .input-group{
+    position:relative;
+    margin-bottom:20px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    outline:none;
+    background:transparent;
+}
+
+.contact-form label{
+    position:absolute;
+    left:12px;
+    top:12px;
+    font-size:13px;
+    color:#777;
+    transition:0.3s;
+    background:#fff;
+    padding:0 5px;
+    pointer-events:none;
+}
+
+.contact-form input:focus + label,
+.contact-form input:valid + label,
+.contact-form textarea:focus + label,
+.contact-form textarea:valid + label{
+    top:-8px;
+    font-size:11px;
+    color:#FFD700;
+}
+
+/* Responsive */
+@media(max-width:900px){
+    .contact-wrapper{
+        grid-template-columns:1fr;
+    }
+
+    .contact-left img{
+        height:300px;
+    }
+}@media(min-width:900px){
+    ul li i{
+        visibility: hidden;
+        display: none
+    } header{
+        display: flex;
+    }nav ul li {
+    margin-left: 0px;
+}
+}/* ================= SHOP HISTORY SECTION ================= */
+
+.about-section {
+    padding: 80px 8%;
+    background: #fff;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-content h5 {
+    color: #ff9800;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.about-content h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.about-stats {
+    display: flex;
+    gap: 30px;
+    margin: 25px 0;
+}
+
+.about-stats h3 {
+    font-size: 26px;
+    color: #ff9800;
+}
+
+.about-stats span {
+    font-size: 14px;
+    color: #666;
+}
+
+.about-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #ff9800;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.about-btn:hover {
+    background: #000;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px) {
+    
+    .about-container {
+        flex-direction: column;
+    }
+    
+    .about-content h2 {
+        font-size: 24px;
+    }
+    
+    .about-stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+}/* ================= TOP OFFER BAR ================= */
+
+.top-offer {
+    background: #ff9800;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    justify-content:space-between;
+align-items:center;
+z-index:1000;
+width:100%;
+    position:fixed;
+    top:60px;
+    left:0;
+    background: #111;
+color: #fff;
+padding: 6px 0;
+font-size: 13px;
+}
+
+/* ===== PROFESSIONAL TOP OFFER ===== */
+
+
+.offer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.offer-badge {
+    background: #ff9800;
+    padding: 2px 5px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}
+
+.top-offer p {
+    margin: 0;
+    color: #ddd;
+}
+
+/* ================= HERO SECTION ================= */
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.), rgba(0, 0, 0, 0.6)),
+        url('https://images.unsplash.com/photo-1504674900247-0877df9cc836') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #ddd;
+}
+
+.hero-buttons {
+    margin-bottom: 20px;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    padding: 12px 28px;
+    margin: 5px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #ff9800;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #fff;
+    color: #000;
+}
+
+.btn-secondary {
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background: #fff;
+    color: #000;
+}
+
+.hero-rating {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ffcc00;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px) {
+    
+    .hero h1 {
+        font-size: 30px;
+    }
+    
+    .hero p {
+        font-size: 14px;
+    }
+    
+}/* ===== SUCCESS POPUP ===== */
+
+.popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    visibility:hidden;
+    opacity:0;
+    transition:0.3s;
+    z-index:999;
+}
+
+.popup.active{
+    visibility:visible;
+    opacity:1;
+}
+
+.popup-content{
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    width:300px;
+}
+
+.popup-content i{
+    font-size:40px;
+    color:#4CAF50;
+    margin-bottom:10px;
+}
+
+.popup-content h3{
+    margin-bottom:10px;
+}
+
+.popup-content button{
+    margin-top:15px;
+    padding:8px 20px;
+    border:none;
+    background:#ff9800;
+    color:#fff;
+    border-radius:20px;
+    cursor:pointer;
+}/* ===== SHOP NAME STYLE ===== */
+
+.shop-name {
+    color: #ff9800;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+/* ===== BUTTONS WRAPPER ===== */
+
+.about-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* ===== PRIMARY BUTTON ===== */
+
+.primary-btn {
+    background: #ff9800;
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.primary-btn:hover {
+    background: #000;
+}
+
+/* ===== SECONDARY BUTTON ===== */
+
+.secondary-btn {
+    border: 2px solid #ff9800;
+    color: #ff9800;
+    padding: 12px 22px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    background: #fff;
+}
+
+.secondary-btn:hover {
+    background: #ff9800;
+    color: #fff;
+}
+
+/* ===== BUTTON ICON SPACING ===== */
+
+.about-btn i {
+    margin-right: 8px;
+}/* ================= BOOK TABLE SECTION ================= */
+
+.book-table {
+    
+    height: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 80px 0;
+}
+
+.book-overlay {
+    background: rgba(0, 0, 0, 0.65);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.book-content {
+    max-width: 700px;
+    color: #fff;
+}
+
+.book-content h5 {
+    color: #ff9800;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.book-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.book-content p {
+    color: #ddd;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* BUTTON */
+
+.book-btn {
+    display: inline-block;
+    padding: 14px 30px;
+    background: #ff9800;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.book-btn i {
+    margin-right: 8px;
+}
+
+.book-btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px) {
+    
+    .book-table {
+        height: auto;
+        padding: 60px 0;
+    }
+    
+    .book-content h2 {
+        font-size: 26px;
+    }
+    
+    .book-content p {
+        font-size: 14px;
+    }
+    
+}/* ===== TEAM SECTION ===== */
+
+.team-section {
+    padding: 80px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.team-header h5 {
+    color: #ff9800;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.team-header h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.team-header p {
+    max-width: 600px;
+    margin: 0 auto 50px;
+    color: #666;
+}
+
+/* ===== SLIDER ===== */
+
+.team-slider {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+}
+
+.team-slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* ===== CARD ===== */
+
+.team-card {
+    min-width: 300px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    transition: 0.4s;
+    flex-shrink: 0;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+}
+
+.team-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid #ff9800;
+}
+
+.team-card h3 {
+    margin-bottom: 5px;
+}
+
+.team-card span {
+    display: block;
+    font-size: 14px;
+    color: #ff9800;
+    margin-bottom: 15px;
+}
+
+.social-icons i {
+    margin: 0 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.social-icons i:hover {
+    color: #ff9800;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(min-width:992px) {
+    .team-slider {
+        overflow: hidden;
+    }
+    
+    .team-card {
+        min-width: calc(33.333% - 20px);
+    }
+}
+
+@media(max-width:600px) {
+    .team-card {
+        min-width: 100%;
+    }
+}/* ===== TEAM SECTION ===== */
+
+.team-section {
+    padding: 80px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.team-header h5 {
+    color: #ff9800;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.team-header h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.team-header p {
+    max-width: 600px;
+    margin: 0 auto 50px;
+    color: #666;
+}
+
+/* ===== SLIDER ===== */
+
+.team-slider {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+}
+
+.team-slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* ===== CARD ===== */
+
+.team-card {
+    min-width: 300px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    transition: 0.4s;
+    flex-shrink: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+}
+
+.team-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid #ff9800;
+}
+
+.team-card h3 {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.team-card span {
+    display: block;
+    font-size: 14px;
+    color: #ff9800;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.team-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(min-width:992px) {
+    .team-slider {
+        overflow: hidden;
+    }
+    
+    .team-card {
+        min-width: calc(33.333% - 20px);
+    }
+}
+
+@media(max-width:600px) {
+    .team-card {
+        min-width: 100%;
+    }
+}/* ===== PREMIUM STATS DESIGN ===== */
+
+.about-stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.stat-box {
+    flex: 1;
+    min-width: 180px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    transition: 0.4s;
+}
+
+.stat-box:hover {
+    transform: translateY(-8px);
+}
+
+.stat-box i {
+    font-size: 28px;
+    color: #ff9800;
+    margin-bottom: 10px;
+}
+
+.stat-box h3 {
+    font-size: 28px;
+    color: #111;
+    margin-bottom: 5px;
+}
+
+.stat-box span {
+    font-size: 14px;
+    color: #777;
+}
+
+@media(max-width:768px) {
+    .about-stats {
+        flex-direction: column;
+    }
+}/* ===== FLOATING WHATSAPP BUTTON ===== */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}a{
+    text-decoration: none;
+    color: inherit;
+}/* ===== CLEAN ZOMATO ORDER SECTION ===== */
+
+.order-online-section {
+    padding: 20px 20px;
+    background: #fff5f6;
+    text-align: center;
+}
+
+.zomato-card {
+    max-width: 600px;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.zomato-card:hover {
+    transform: translateY(-5px);
+}
+
+.order-text {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Zomato Button */
+
+.zomato-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 26px;
+    background: #E23744;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(226, 55, 68, 0.3);
+    transition: 0.3s;
+}
+
+.zomato-btn:hover {
+    background: #c62833;
+    transform: scale(1.05);
+}
+
+/* Responsive */
+
+@media(max-width:600px) {
+    .zomato-card {
+        padding: 25px 20px;
+    }
+}.zomato-content h3{
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+
+</style>
+</head>
+<a href="https://wa.me/919999999999?text=Hello%20I%20want%20to%20order%20food"
+   class="whatsapp-float"
+   target="_blank">
+   <i class="fab fa-whatsapp"></i>
+</a>
+<body>
+
+<header>
+    <div class="logo">
+        <i class="fas fa-leaf"></i> Golden Harvest
+    </div>
+    <nav>
+        <ul id="menu">
+            <li><a href="#home"><i class="fas fa-house"></i> Home</a></li>
+            <li><a href="#products"><i class="fas fa-bowl-food"></i> Products</a></li>
+            <li><a href="#catalog"><i class="fas fa-book-open"></i> Catalog</a></li>
+            <li><a href="#about"><i class="fas fa-circle-info"></i> About</a></li>
+            <li><a href="#reviews"><i class="fas fa-star"></i> Reviews</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+    
+</header>
+<!-- TOP OFFER BAR -->
+<!-- TOP OFFER -->
+<div class="top-offer">
+    <div class="offer-content">
+        <span class="offer-badge">20% OFF</span>
+        <p>First Order Discount Available Now</p>
+    </div>
+</div>
+<!-- HERO -->
+<!-- HERO SECTION -->
+<section id="hero" class="hero">
+
+    <div class="hero-content">
+        <h1>Delicious Food Made With Love</h1>
+        <p>Experience premium taste with fresh ingredients and authentic recipes.</p>
+
+        <div class="hero-buttons">
+            <a href="#products" class="btn-primary"><i class="fas fa-utensils"></i>  View Menu</a>
+            <a href="/form.html" class="btn-secondary"><i class="fas fa-calendar-check"></i> Book Table</a>
+        </div>
+
+        <div class="hero-rating">
+            ⭐ 4.8 Rating | 10,000+ Happy Customers
+        </div>
+    </div>
+
+</section>
+
+<!-- SHOP HISTORY / ABOUT -->
+<section id="about" class="about-section">
+
+    <div class="about-container">
+
+        <!-- Left Image -->
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9" alt="Restaurant Interior">
+        </div>
+
+        <!-- Right Content -->
+        <div class="about-content">
+
+            <!-- Shop Name -->
+            <h5 class="shop-name">Golden Harvest</h5>
+
+            <h2>Serving Delicious Food Since 2010</h2>
+
+            <p>
+                Founded in 2010, our restaurant started as a small family kitchen with a big dream —
+                to serve fresh, high-quality, and unforgettable meals.
+            </p>
+
+            <p>
+                We use organic ingredients, traditional recipes, and modern cooking
+                techniques to create dishes that satisfy both heart and taste buds.
+            </p>
+
+            <!-- Stats -->
+           <div class="about-stats">
+
+    <div class="stat-box">
+        <i class="fas fa-award"></i>
+        <h3 class="counter" data-target="15">0</h3>
+        <span>Years Experience</span>
+    </div>
+
+    <div class="stat-box">
+        <i class="fas fa-smile"></i>
+        <h3 class="counter" data-target="50000">0</h3>
+        <span>Happy Customers</span>
+    </div>
+
+    <div class="stat-box">
+        <i class="fas fa-utensils"></i>
+        <h3 class="counter" data-target="120">0</h3>
+        <span>Premium Dishes</span>
+    </div>
+
+</div>
+
+            <!-- Buttons -->
+            <div class="about-buttons">
+
+                <a href="#products" class="about-btn primary-btn">
+                    <i class="fas fa-utensils"></i> Explore Our Menu
+                </a>
+
+                <a href="https://maps.app.goo.gl/65e2ScSvgw7dnNgh8" target="_blank" class="about-btn secondary-btn">
+                    <i class="fas fa-location-dot"></i> Get Directions
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- PRODUCTS -->
+<section id="products" class="products-section">
+
+    <div class="section-title">
+        <h2>Our Popular Dishes</h2>
+        <p>Fresh • Organic • Premium Quality</p>
+    </div>
+
+    <div class="products">
+
+        <!-- Product 1 -->
+        <div class="card">
+            <div class="card-img">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947" alt="Grilled Chicken">
+                <div class="overlay">
+                    <button class="cart-btn">
+                        <i class="fas fa-cart-shopping"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="card-content">
+                <h3>Grilled Chicken</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p>Juicy flame grilled chicken seasoned with fresh herbs.</p>
+                <div class="price">$12.99</div>
+            </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="card">
+            <div class="card-img">
+                <img src="https://images.unsplash.com/photo-1546069901-eacef0df6022" alt="">
+                <div class="overlay">
+                    <button class="cart-btn">
+                        <i class="fas fa-cart-shopping"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="card-content">
+                <h3>Veggie Salad</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>Fresh organic vegetables with olive oil dressing.</p>
+                <div class="price">$9.99</div>
+            </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="card">
+            <div class="card-img">
+                <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d" alt="">
+                <div class="overlay">
+                    <button class="cart-btn">
+                        <i class="fas fa-cart-shopping"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="card-content">
+                <h3>Italian Pasta</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>Authentic creamy Italian pasta with rich flavor.</p>
+                <div class="price">$14.99</div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<!-- ===== ORDER VIA ZOMATO SNIPPET ===== -->
+<section class="order-online-section">
+
+    <div class="zomato-card">
+ <h3>Order Delicious Food Online</h3>
+        <p class="order-text">
+            Craving something delicious? Order now and enjoy fast delivery at your doorstep.
+        </p>
+
+        <a href="https://www.zomato.com/" target="_blank" class="zomato-btn">
+            <i class="fas fa-shopping-bag"></i>
+            Order via Zomato
+        </a>
+
+    </div>
+
+</section>
+<!-- CATALOG -->
+<section id="catalog" class="catalog">
+    
+    <div class="section-title">
+        <h2>Our Full Menu Catalog</h2>
+        <p>Explore breakfast, lunch, dinner & desserts</p>
+    </div>
+    
+    <div class="catalog-container">
+        
+        <!-- Breakfast -->
+        <div class="catalog-box">
+            <h3><i class="fas fa-coffee"></i> Breakfast</h3>
+            
+            <div class="menu-item">
+                <span>Pancakes with Honey</span>
+                <span>$6.99</span>
+            </div>
+            
+            <div class="menu-item">
+                <span>Omelette Special</span>
+                <span>$5.49</span>
+            </div>
+            
+            <div class="menu-item">
+                <span>Fresh Fruit Bowl</span>
+                <span>$4.99</span>
+            </div>
+        </div>
+        
+        <!-- Lunch -->
+        <div class="catalog-box">
+            <h3><i class="fas fa-utensils"></i> Lunch</h3>
+            
+            <div class="menu-item">
+                <span>Grilled Chicken Meal</span>
+                <span>$12.99</span>
+            </div>
+            
+            <div class="menu-item">
+                <span>Veg Thali</span>
+                <span>$10.49</span>
+            </div>
+            
+            <div class="menu-item">
+                <span>Italian Pasta</span>
+                <span>$11.99</span>
+            </div>
+        </div>
+        
+        <!-- Dinner -->
+        <div class="catalog-box">
+            <h3><i class="fas fa-drumstick-bite"></i> Dinner</h3>
+            
+            <div class="menu-item">
+                <span>Steak Special</span>
+                <span>$18.99</span>
+            </div>
+            
+            <div class="menu-item">
+                <span>Seafood Platter</span>
+                <span>$21.49</span>
+            </div>
+            
+            <div class="menu-item">
+                <span>Butter Naan & Curry</span>
+                <span>$14.99</span>
+            </div>
+        </div>
+        
+        <!-- Desserts -->
+        <div class="catalog-box">
+            <h3><i class="fas fa-ice-cream"></i> Desserts</h3>
+            
+            <div class="menu-item">
+                <span>Chocolate Lava Cake</span>
+                <span>$7.99</span>
+            </div>
+            
+            <div class="menu-item">
+                <span>Ice Cream Sundae</span>
+                <span>$5.99</span>
+            </div>
+            
+            <div class="menu-item">
+                <span>Cheesecake Slice</span>
+                <span>$6.49</span>
+            </div>
+        </div>
+        
+    </div>
+    
+</section>
+<!-- BOOK TABLE SECTION -->
+<section class="book-table">
+
+    <div class="book-overlay">
+
+        <div class="book-content">
+            <h5>Reservation</h5>
+            <h2>Book Your Table Now</h2>
+
+            <p>
+                Reserve your table in advance and enjoy a premium dining 
+                experience with family and friends. Fresh food, cozy ambience,
+                and unforgettable taste await you.
+            </p>
+
+            <a href="/form.html" class="book-btn">
+                <i class="fas fa-calendar-check"></i> Book a Table
+            </a>
+        </div>
+
+    </div>
+
+</section>
+<!-- ABOUT -->
+<section id="about">
+    <div class="section-title">
+        <h2>About Golden Harvest</h2>
+    </div>
+    <div class="about">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5">
+        <div class="about-text">
+            <h3>We Serve Quality & Freshness</h3>
+            <p>Golden Harvest offers farm-fresh ingredients, world-class chefs, and an unforgettable dining experience. Our mission is to deliver taste, quality, and happiness in every bite.</p>
+        </div>
+    </div>
+</section>
+<!-- ===== MEET OUR TEAM SECTION ===== -->
+<section class="team-section">
+
+    <div class="team-header">
+        <h5>Our Experts</h5>
+        <h2>Meet Our Professional Team</h2>
+        <p>Passionate chefs and hospitality experts dedicated to delivering exceptional dining experiences.</p>
+    </div>
+
+    <div class="team-slider">
+
+        <!-- Member 1 -->
+        <div class="team-card">
+            <img src="https://images.unsplash.com/photo-1607631568010-a87245c0daf8" alt="Head Chef">
+            <h3>Rahul Sharma</h3>
+            <span>Head Chef</span>
+            <p>With 15+ years of culinary experience, Rahul specializes in blending traditional flavors with modern techniques.</p>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="team-card">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" alt="Manager">
+            <h3>Anjali Verma</h3>
+            <span>Restaurant Manager</span>
+            <p>Anjali ensures smooth operations and delivers a premium dining experience to every guest.</p>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="team-card">
+            <img src="https://images.unsplash.com/photo-1557862921-37829c790f19" alt="Sous Chef">
+            <h3>Arjun Patel</h3>
+            <span>Sous Chef</span>
+            <p>Arjun is known for his creativity and precision, crafting dishes that delight both taste and presentation.</p>
+        </div>
+
+        <!-- Member 4 -->
+        <div class="team-card">
+            <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a" alt="Pastry Chef">
+            <h3>Priya Singh</h3>
+            <span>Pastry Chef</span>
+            <p>Priya creates signature desserts with artistic presentation and unforgettable flavors.</p>
+        </div>
+
+        <!-- Member 5 -->
+        <div class="team-card">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e" alt="Service Lead">
+            <h3>Mohit Kumar</h3>
+            <span>Service Lead</span>
+            <p>Mohit leads the service team with professionalism, ensuring every guest feels welcomed and valued.</p>
+        </div>
+
+    </div>
+
+</section>
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+
+    <div class="section-title">
+        <h2>Customer Reviews</h2>
+        <p>What Our Happy Customers Say</p>
+    </div>
+
+    <div class="reviews-container">
+
+        <div class="review-card">
+            <div class="review-header">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+                <div>
+                    <h4>Priya Sharma</h4>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <p>"Absolutely delicious food and amazing atmosphere! The service was top-notch and the dishes were fresh and flavorful."</p>
+        </div>
+
+        <div class="review-card">
+            <div class="review-header">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+                <div>
+                    <h4>Rahul Verma</h4>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+            <p>"Best organic restaurant in town! I loved the ambiance and the healthy food options. Highly recommended!"</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    
+    <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>We’d love to hear from you</p>
+    </div>
+    
+    <div class="contact-wrapper">
+        
+        <!-- LEFT SIDE IMAGE -->
+        <div class="contact-left">
+            <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9" alt="Restaurant Exterior">
+        </div>
+        
+        <!-- RIGHT SIDE CONTENT -->
+        <div class="contact-right">
+            
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                
+                <div class="info-box">
+                    <i class="fas fa-location-dot"></i>
+                    <span>Kolkata, India</span>
+                </div>
+                
+                <div class="info-box">
+                    <i class="fas fa-phone"></i>
+                    <span>+91 98765 43210</span>
+                </div>
+                
+                <div class="info-box">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@goldenharvest.com</span>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+     <form id="contactForm">
+
+    <input type="hidden" name="access_key" value="96018cbc-b973-4274-9edc-dd2120e8f623">
+<input type="hidden" name="Website" value="Restaurant">
+    <div class="input-group">
+        <input type="text" name="name" required>
+        <label>Your Name</label>
+    </div>
+
+    <div class="input-group">
+        <input type="email" name="email" required>
+        <label>Your Email</label>
+    </div>
+
+    <div class="input-group">
+        <textarea name="message" rows="4" required></textarea>
+        <label>Your Message</label>
+    </div>
+
+    <button type="submit" class="send-btn">
+        <span>Send Message</span>
+        <i class="fas fa-paper-plane"></i>
+    </button>
+
+</form>
+            
+            
+        </div>
+        
+    </div>
+    
+</section>
+<!-- SUCCESS POPUP -->
+<div id="successPopup" class="popup">
+    <div class="popup-content">
+        <i class="fas fa-circle-check"></i>
+        <h3>Thank You!</h3>
+        <p>Your message has been sent successfully.</p>
+        <button onclick="closePopup()">OK</button>
+    </div>
+</div>
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-box">
+            <h3><i class="fas fa-leaf"></i> Golden Harvest</h3>
+            <p>Premium organic restaurant serving fresh, healthy and delicious meals crafted with love and passion.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-box">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-box">
+            <h4>Opening Hours</h4>
+            <p>Mon - Fri: 9AM - 10PM</p>
+            <p>Saturday: 10AM - 11PM</p>
+            <p>Sunday: Closed</p>
+        </div>
+
+        <div class="footer-box">
+            <h4>Contact Info</h4>
+            <p><i class="fas fa-map-marker-alt"></i> Kolkata, India</p>
+            <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+            <p><i class="fas fa-envelope"></i> info@goldenharvest.com</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Golden Harvest | All Rights Reserved
+    </div>
+</footer>
+
+<script>
+const toggle = document.getElementById('toggle');
+const menu = document.getElementById('menu');
+
+toggle.addEventListener('click',()=>{
+    menu.classList.toggle('active');
+});
+
+const form = document.getElementById("contactForm");
+const popup = document.getElementById("successPopup");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if(data.success){
+            popup.classList.add("active");
+            form.reset();
+        } else {
+            alert("Something went wrong!");
+        }
+    })
+    .catch(error => {
+        alert("Submission failed!");
+    });
+});
+
+function closePopup(){
+    popup.classList.remove("active");
+}
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    const counters = document.querySelectorAll(".counter");
+    let started = false;
+
+    function startCounter(){
+        counters.forEach(counter => {
+
+            const updateCount = () => {
+                const target = +counter.getAttribute("data-target");
+                const count = +counter.innerText;
+
+                const increment = target / 200;
+
+                if(count < target){
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(updateCount, 10);
+                } else {
+                    counter.innerText = target >= 1000 ? 
+                        (target/1000)+'K+' : target+'+';
+                }
+            };
+
+            updateCount();
+        });
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting && !started){
+                startCounter();
+                started = true;
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(document.querySelector(".about-stats"));
+
+});
+</script>
+
+</body>
+</html>
